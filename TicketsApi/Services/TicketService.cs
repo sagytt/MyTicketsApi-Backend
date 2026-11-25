@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using TicketsApi.Data;
 using TicketsApi.DTOs;
-using TicketsApi.Enums;
 using TicketsApi.Models;
 
 namespace TicketsApi.Services;
