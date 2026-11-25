@@ -1,7 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using TicketsApi.DTOs;
-using TicketsApi.Enums;
+using TicketsApi.Models;
 using TicketsApi.Query;
 using TicketsApi.Services;
 
