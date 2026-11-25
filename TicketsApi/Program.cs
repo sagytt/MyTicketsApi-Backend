@@ -1,9 +1,27 @@
 using TicketsApi.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // use camelCase for JSON property names
+        options.JsonSerializerOptions.PropertyNamingPolicy =
+            JsonNamingPolicy.CamelCase;
+
+        // serialize enums as strings instead of numbers
+        options.JsonSerializerOptions.Converters.Add(
+            new JsonStringEnumConverter(
+                namingPolicy: null,
+                allowIntegerValues: false
+            )
+        );
+    });
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
