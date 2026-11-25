@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using TicketsApi.Enums;
+using TicketsApi.Models;
 
 namespace TicketsApi.DTOs;
 
