@@ -1,6 +1,7 @@
-var builder = WebApplication.CreateBuilder(args);
+using TicketsApi.Data;
+using Microsoft.EntityFrameworkCore;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 

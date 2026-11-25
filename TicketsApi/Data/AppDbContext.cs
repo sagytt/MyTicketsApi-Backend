@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using TicketsApi.Models;
+
+namespace TicketsApi.Data;
+
 public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
