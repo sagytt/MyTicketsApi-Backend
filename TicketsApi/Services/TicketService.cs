@@ -52,11 +52,11 @@ public class TicketService
             query = query.Where(t => t.Priority == priority.Value);
         }
 
-        var tickets = await query
-            .OrderByDescending(t => t.CreatedAt)
-            .ToListAsync(cancellationToken);
+        var tickets = await query.ToListAsync(cancellationToken);
 
+        // SQLite cannot translate ORDER BY on DateTimeOffset.
         return tickets
+            .OrderByDescending(t => t.CreatedAt)
             .Select(TicketResponse.FromEntity)
             .ToList();
     }
